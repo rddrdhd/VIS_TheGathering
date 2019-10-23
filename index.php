@@ -14,17 +14,12 @@ here:
     die('Connect Error ('.mysqli_connect_errno().') '.mysqli_connect_error());
   }
 
-  echo "a";
   $sql = "SELECT userID, rights FROM user";
   
-  
-  echo "b";
   $result = $connection->query($sql);
   
-  echo "c";
   if ($result->num_rows > 0) {
 
-  echo "d";
       // output data of each row
       while($row = $result->fetch_assoc()) {
           echo "<br> id: ". 
@@ -36,6 +31,12 @@ here:
 }
 
   $connection->close();
+  echo "Server Path </br>";
+$path= $_SERVER['PATH_INFO'];
+print_r($path);
+// Then we split the path to get the corresponding controller and method to work with
+echo "<br/><br/>Path Split<br/>";
+print_r(explode('/', ltrim($path)));
 ?>
 
 </body>
