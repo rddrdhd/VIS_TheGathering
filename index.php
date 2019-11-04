@@ -12,9 +12,17 @@ DEFINE('DB_DATABASE', 'vis');
 
 
 require_once('MysqliDb.php');
-$db = new MysqliDb (DB_HOST, DB_USERNAME, DB_PASSWORD, DB_DATABASE);
-$users = $db->get('user');
-var_dump($users);
+require_once('DAO/UserDAO.php');
+require_once('DTO/User.php');
+
+$user = UserDAO::getAll();
+var_dump($user);
+
+echo "<br>eeeeyo<br>";
+
+
+
+
 
 include_once('footer.php');?>
 <br>eof
