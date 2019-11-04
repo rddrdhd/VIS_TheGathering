@@ -14,9 +14,11 @@ DEFINE('DB_DATABASE', 'vis');
 require_once('MysqliDb.php');
 require_once('DAO/UserDAO.php');
 require_once('DTO/User.php');
+require_once('DAO/PostDAO.php');
+require_once('DTO/Post.php');
 
-$user = UserDAO::getAll();
-var_dump($user);
+$p = PostDAO::getOneBy("idPost",1);
+var_dump($p);
 
 echo "<br>eeeeyo<br>";
 
