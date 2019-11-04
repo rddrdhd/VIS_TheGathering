@@ -32,6 +32,14 @@ class PostDAO {
         $p->deletedAt = $post["deletedAt"];
         $p->rights = $post["rights"];
         $p->type = $post["type"];
+        $p->author = UserDAO::getOneBy("idUser",$post["idUserAuthor"]);
+        if ($post["idUserTarget"]){
+            $p->target = UserDAO::getOneBy("idUser",$post["idUserTarget"]);
+        } else if ($post["idPostTarget"]) {
+            $p->target = PostDAO::getOneBy("idPost",$post["idPostTarget"]);
+        } else if ($post["idDeckTarget"]){
+            $p->target = DeckDAO::getOneBy("idDeck",$post["idDeckTarget"]);
+        }
         return $p;
     }
 

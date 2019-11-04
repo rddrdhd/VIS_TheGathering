@@ -17,7 +17,7 @@ require_once('DTO/User.php');
 require_once('DAO/PostDAO.php');
 require_once('DTO/Post.php');
 
-$p = PostDAO::getOneBy("idPost",1);
+$p = PostDAO::getOneBy("idPost",4);
 var_dump($p);
 
 echo "<br>eeeeyo<br>";
