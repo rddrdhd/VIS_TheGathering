@@ -16,8 +16,10 @@ require_once('DAO/UserDAO.php');
 require_once('DTO/User.php');
 require_once('DAO/PostDAO.php');
 require_once('DTO/Post.php');
+require_once('DAO/DeckDAO.php');
+require_once('DTO/Deck.php');
 
-$p = PostDAO::getOneBy("idPost",4);
+$p = DeckDAO::getOneBy("idDeck", 1);
 var_dump($p);
 
 echo "<br>eeeeyo<br>";
