@@ -15,6 +15,7 @@ class DeckDAO {
 
         return $decksObjects;
     }
+
     private static function fillDeck($deck) {
         $d = new Deck();
         $d->idDeck = $deck["idDeck"];
@@ -23,14 +24,27 @@ class DeckDAO {
         $d->deletedAt = $deck["deletedAt"];
         $d->rights = $deck["rights"];
         $d->owner = UserDAO::getOneBy("idUser", $deck["idUserOwner"]);
+        $d->cards = self::getCards();
 
         return $d;
     }
+
     public static function getOneBy($column, $value) {
         $db = new MysqliDb (DB_HOST, DB_USERNAME, DB_PASSWORD, DB_DATABASE);
         $db->where($column,$value);
         $deck = $db->getOne("deck");
         $d = self::fillDeck($deck);
+
         return $d;
     }
+
+
+    public static function getCards($idDeck){
+        $db = new MysqliDb (DB_HOST, DB_USERNAME, DB_PASSWORD, DB_DATABASE);
+        
+        $db->where("");//TODO
+
+        return $cards;
+    }
+
 }

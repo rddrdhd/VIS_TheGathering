@@ -10,7 +10,7 @@ DEFINE('DB_PASSWORD', 'root');
 DEFINE('DB_HOST', 'localhost');
 DEFINE('DB_DATABASE', 'vis');
 
-
+//require_once 'mtgsdk/mtgsdk:dev-master';
 require_once('MysqliDb.php');
 require_once('DAO/UserDAO.php');
 require_once('DTO/User.php');
@@ -18,15 +18,19 @@ require_once('DAO/PostDAO.php');
 require_once('DTO/Post.php');
 require_once('DAO/DeckDAO.php');
 require_once('DTO/Deck.php');
+require_once('API/Card.php');
+ini_set("allow_url_fopen", 1);
+//$p = DeckDAO::getOneBy("idDeck", 1);
+//var_dump($p);
+$APIurl = "https://api.magicthegathering.io/v1/cards/386616";
+$json = file_get_contents($APIurl);
+$json_data = json_decode($json, true);
+$card = $json_data["card"];
 
-$p = DeckDAO::getOneBy("idDeck", 1);
-var_dump($p);
-
-echo "<br>eeeeyo<br>";
-
+var_dump(new Card(386616));
 
 
 
 
 include_once('footer.php');?>
-<br>eof
+<br>eoi

@@ -1,6 +1,4 @@
 <?php
-
-
 class UserDAO {
     private static function loadAllArray(){
         $db = new MysqliDb (DB_HOST, DB_USERNAME, DB_PASSWORD, DB_DATABASE);
