@@ -22,13 +22,9 @@ require_once('API/Card.php');
 ini_set("allow_url_fopen", 1);
 //$p = DeckDAO::getOneBy("idDeck", 1);
 //var_dump($p);
-$APIurl = "https://api.magicthegathering.io/v1/cards/386616";
-$json = file_get_contents($APIurl);
-$json_data = json_decode($json, true);
-$card = $json_data["card"];
 
-var_dump(new Card(386616));
-
+//var_dump(new Card(386616));
+var_dump(DeckDAO::getOneBy("idDeck", 1));
 
 
 

@@ -24,7 +24,7 @@ class DeckDAO {
         $d->deletedAt = $deck["deletedAt"];
         $d->rights = $deck["rights"];
         $d->owner = UserDAO::getOneBy("idUser", $deck["idUserOwner"]);
-        $d->cards = self::getCards();
+        $d->cards = self::getCards($d->idDeck);
 
         return $d;
     }
@@ -42,8 +42,8 @@ class DeckDAO {
     public static function getCards($idDeck){
         $db = new MysqliDb (DB_HOST, DB_USERNAME, DB_PASSWORD, DB_DATABASE);
         
-        $db->where("");//TODO
-
+        $db->where("idDeck", $idDeck);
+        $cards = $db->get("carddeck", null, ["idCard", "count"]);
         return $cards;
     }
 
