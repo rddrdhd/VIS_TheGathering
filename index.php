@@ -1,43 +1,32 @@
-<!DOCTYPE html>
-<html>
-<body>
-here:
 <?php
-  DEFINE('DB_USERNAME', 'root');
-  DEFINE('DB_PASSWORD', 'root');
-  DEFINE('DB_HOST', 'localhost');
-  DEFINE('DB_DATABASE', 'vis');
+$PageTitle="Index";
+include_once('header.php');
+function customPageHeader(){?>
+    <!--custom hlavička-->
+<?php }
 
-  $connection = new mysqli(DB_HOST, DB_USERNAME, DB_PASSWORD, DB_DATABASE);
+DEFINE('DB_USERNAME', 'root');
+DEFINE('DB_PASSWORD', 'root');
+DEFINE('DB_HOST', 'localhost');
+DEFINE('DB_DATABASE', 'vis');
 
-  if (mysqli_connect_error()) {
-    die('Connect Error ('.mysqli_connect_errno().') '.mysqli_connect_error());
-  }
+//require_once 'mtgsdk/mtgsdk:dev-master';
+require_once('MysqliDb.php');
+require_once('DAO/UserDAO.php');
+require_once('DTO/User.php');
+require_once('DAO/PostDAO.php');
+require_once('DTO/Post.php');
+require_once('DAO/DeckDAO.php');
+require_once('DTO/Deck.php');
+require_once('API/Card.php');
+ini_set("allow_url_fopen", 1);
+//$p = DeckDAO::getOneBy("idDeck", 1);
+//var_dump($p);
 
-  $sql = "SELECT userID, rights FROM user";
-  
-  $result = $connection->query($sql);
-  
-  if ($result->num_rows > 0) {
+//var_dump(new Card(386616));
+var_dump(DeckDAO::getOneBy("idDeck", 1));
 
-      // output data of each row
-      while($row = $result->fetch_assoc()) {
-          echo "<br> id: ". 
-          $row["userID"]. " - Rights: ". 
-          $row["rights"]. "<br>";
-      }
-  } else {
-    echo "0 results";
-}
 
-  $connection->close();
-  echo "Server Path </br>";
-$path= $_SERVER['PATH_INFO'];
-print_r($path);
-// Then we split the path to get the corresponding controller and method to work with
-echo "<br/><br/>Path Split<br/>";
-print_r(explode('/', ltrim($path)));
-?>
 
-</body>
-</html>
+include_once('footer.php');?>
+<br>eoi
