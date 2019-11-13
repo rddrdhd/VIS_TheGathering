@@ -1,9 +1,10 @@
 <?php
-$PageTitle="Index";
+$PageTitle="TGHome";
 include_once('header.php');
 function customPageHeader(){?>
     <!--custom hlavička-->
 <?php }
+include_once('menu.php');
 
 DEFINE('DB_USERNAME', 'root');
 DEFINE('DB_PASSWORD', 'root');
@@ -29,4 +30,4 @@ var_dump(DeckDAO::getOneBy("idDeck", 1));
 
 
 include_once('footer.php');?>
-<br>eoi
+<pre>eoi</pre>
