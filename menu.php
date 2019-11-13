@@ -3,7 +3,7 @@
         $menu = ["Cards","Posts","Decks","Ads","Tournaments","Users"];
         foreach($menu as $item):
     ?>
-    <a href="vis.l">
+    <a href=<?php echo "/".$item.".php"?>>
             <div class="item">
                     <?php echo $item; ?>
             </div>

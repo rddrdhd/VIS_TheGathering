@@ -1,0 +1,2 @@
+RewriteEngine on
+RewriteRule ^/posts/([0-9]+)\.html /templates/posts.php?post_id=$1
