@@ -24,6 +24,26 @@ class PostDAO {
         return $p;
     }
 
+    public static function getAllType($type) {
+
+        $db = new MysqliDb (DB_HOST, DB_USERNAME, DB_PASSWORD, DB_DATABASE);
+        $db->where('type',$type);
+        $items = $db->get('post');
+        //var_dump($items);
+   // $items = $db->rawQuery('SELECT * FROM post WHERE type = {$type}');//$db->get('post');
+        foreach($items as $item){
+
+          $post =  self::fillPost($item);
+//TODO: musím to spravit!
+            array_push($is, $post);
+
+        //v//ar_dump($post);
+        }
+
+        var_dump($is);
+        return $is;
+    }
+
     private static function fillPost($post) {
         $p = new Post();
         $p->idPost = $post["idPost"];

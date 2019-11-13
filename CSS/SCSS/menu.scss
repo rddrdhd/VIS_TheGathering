@@ -1,9 +1,12 @@
 .menu {
-        height: 50px;
+        min-height: 50px;
         width: 100%;
         display: flex;
         justify-content: space-evenly;
-      a{ 
+        flex-wrap: wrap;
+        background: rgba(0,0,0,0.666);
+        border-bottom: 1px solid rgb(243, 252, 161);
+      a { 
           color: white;
           text-decoration: none;
           &:hover {
@@ -14,6 +17,7 @@
         font-size: 20px;
         width: 100%;
         text-align: center;
+        padding: 10px;
     }}
 
 }

@@ -15,6 +15,8 @@
         </div>
     </div><!-- /#header -->
 
+
+    <?php include_once('menu.php'); ?>
     <div id="body">
     <?php if (function_exists('customPageHeader')){
         customPageHeader();
