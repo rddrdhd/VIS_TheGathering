@@ -1,1 +1,3 @@
-hii
+<?php
+    $PageTitle="TGPosts";
+ ?>   posts
