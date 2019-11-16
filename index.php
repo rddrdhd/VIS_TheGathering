@@ -14,24 +14,29 @@ if(isset($_GET['nav'])):
     <?php
     
 switch ($_GET['nav']):
-    case "Posts":
-        $items = PostDAO::getAllType(2);
+    case "posts":
+        $items = PostDAO::getAllType(1);
         //include_once('SRC/templates/posts.php');
         break;
-    case "Cards":
+    case "cards":
+    //$items = CardDAO::getByID(386616);
+    $items = CardDAO::getByID(386616);
         //include_once('SRC/templates/cards.php');
         break;
-    case "Decks":
+    case "decks":
     $items = DeckDAO::getAll();
         //include_once('SRC/templates/decks.php');
         break;
-    case "Ads":
+    case "ads":
+    $items = PostDAO::getAllType(3);
         //include_once('SRC/templates/ads.php');
         break;
-    case "Tournaments":
+    case "tournaments":
+    $items = PostDAO::getAllType(4);
         //include_once('SRC/templates/tournaments.php');
         break;
-    case "Users":
+    case "users":
+    $items = UserDAO::getAll();
         //include_once('SRC/templates/users.php');
         break;
 
@@ -41,7 +46,6 @@ switch ($_GET['nav']):
 
 endswitch;
 echo "<pre>";
-$items = PostDAO::getAll();
 var_dump($items);
 echo "</pre>";
 endif;

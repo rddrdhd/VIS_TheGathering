@@ -25,6 +25,7 @@ class PostDAO {
     }
 
     public static function getAllType($type) {
+        $array = array();
 
         $db = new MysqliDb (DB_HOST, DB_USERNAME, DB_PASSWORD, DB_DATABASE);
         $db->where('type',$type);
@@ -35,13 +36,13 @@ class PostDAO {
 
           $post =  self::fillPost($item);
 //TODO: musím to spravit!
-            array_push($is, $post);
+            array_push($array, $post);
 
         //v//ar_dump($post);
         }
 
-        var_dump($is);
-        return $is;
+        var_dump($array);
+        return $array;
     }
 
     private static function fillPost($post) {
@@ -59,7 +60,7 @@ class PostDAO {
             $p->target = PostDAO::getOneBy("idPost",$post["idPostTarget"]);
         } else if ($post["idDeckTarget"]){
             $p->target = DeckDAO::getOneBy("idDeck",$post["idDeckTarget"]);
-        }
+        } else {$p->target = 0;}
         return $p;
     }
 
