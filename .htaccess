@@ -1,0 +1,4 @@
+RewriteEngine on
+RewriteRule ^([a-zA-Z0-9]+)/$ index.php?nav=$1
+
+RewriteRule ^([a-zA-Z0-9]+)/$ index.php?nav=$1
