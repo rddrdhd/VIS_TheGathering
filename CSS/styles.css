@@ -45,7 +45,7 @@ h1, h2, h3, h4, h5 {
   justify-content: space-evenly;
   flex-wrap: wrap;
   background: rgba(0, 0, 0, 0.666);
-  border-bottom: 1px solid #f3fca1;
+  border-bottom: 1px solid rgba(255, 187, 0, 0.507);
 }
 .menu a {
   color: white;
@@ -53,6 +53,7 @@ h1, h2, h3, h4, h5 {
 }
 .menu a:hover {
   text-decoration: underline;
+  text-decoration-style: 1px solid;
 }
 .menu a .item {
   letter-spacing: 4px;
