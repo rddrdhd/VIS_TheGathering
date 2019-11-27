@@ -1,5 +1,6 @@
 <?php include_once("thatssecret.php");
 
-$item = UserDAO::getAll();
-var_dump($item);
+echo "<pre>";
+print_r(json_encode(UserDAO::getAll(),true));
+echo "</pre>";
 
