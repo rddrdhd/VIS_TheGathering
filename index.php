@@ -1,43 +1,57 @@
-<!DOCTYPE html>
-<html>
-<body>
-here:
 <?php
-  DEFINE('DB_USERNAME', 'root');
-  DEFINE('DB_PASSWORD', 'root');
-  DEFINE('DB_HOST', 'localhost');
-  DEFINE('DB_DATABASE', 'vis');
+$PageTitle="TGHome";
+include_once('SRC/base/header.php');
+function customPageHeader(){?>
+    <!--custom hlavička-->
+<?php }
 
-  $connection = new mysqli(DB_HOST, DB_USERNAME, DB_PASSWORD, DB_DATABASE);
 
-  if (mysqli_connect_error()) {
-    die('Connect Error ('.mysqli_connect_errno().') '.mysqli_connect_error());
-  }
 
-  $sql = "SELECT userID, rights FROM user";
-  
-  $result = $connection->query($sql);
-  
-  if ($result->num_rows > 0) {
 
-      // output data of each row
-      while($row = $result->fetch_assoc()) {
-          echo "<br> id: ". 
-          $row["userID"]. " - Rights: ". 
-          $row["rights"]. "<br>";
-      }
-  } else {
-    echo "0 results";
+echo "<pre>";
+var_dump($_SERVER['REQUEST_URI']);
+echo "</pre>";
+
+echo "<pre>";
+var_dump(__DIR__);
+echo "</pre>";
+
+$request = $_SERVER['REQUEST_URI'];
+//var_dump($request);die();
+switch ($request) {
+    case '/' :
+        echo "lomitko";
+        break;
+    case '' :
+        echo "bez lomitka";
+        break;
+    case '/cards' :
+        include_once('SRC/templates/cards.php');
+        break;
+    case '/posts' :
+        include_once('SRC/templates/posts.php');
+        break;
+    case '/decks' :
+        include_once('SRC/templates/decks.php');
+        break;
+    case '/ads' :
+        include_once('SRC/templates/ads.php');
+        break;
+    case '/tournaments' :
+        include_once('SRC/templates/tournaments.php');
+        break;
+    case '/users' :
+        include_once('SRC/templates/users.php');
+        break;
+
+        case '/API';
+            require __DIR__ . 'SRC/API/all-users.php';
+            break;
+    default:
+        http_response_code(404);
+        require __DIR__ . '/404.php';
+        break;
 }
 
-  $connection->close();
-  echo "Server Path </br>";
-$path= $_SERVER['PATH_INFO'];
-print_r($path);
-// Then we split the path to get the corresponding controller and method to work with
-echo "<br/><br/>Path Split<br/>";
-print_r(explode('/', ltrim($path)));
-?>
 
-</body>
-</html>
+include_once('SRC/base/footer.php');?>
