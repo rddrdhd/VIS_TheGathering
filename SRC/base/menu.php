@@ -1,13 +1,13 @@
 <div class="menu" id="main-nav">
-    <?php 
+    <?php
         $menu = ["Cards","Posts","Decks","Ads","Tournaments","Users"];
 
         foreach($menu as $item): ?>
-            <a href="/?nav=<?php echo strtolower($item) ?>">
+            <a href="/<?php echo strtolower($item) ?>">
                 <div class="item">
                         <?php echo $item ?>
                 </div>
             </a>
     <?php endforeach; ?>
-    
+
 </div>

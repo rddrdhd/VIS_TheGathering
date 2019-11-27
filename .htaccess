@@ -1,4 +1,5 @@
-RewriteEngine on
-RewriteRule ^([a-zA-Z0-9]+)/$ index.php?nav=$1
-
-RewriteRule ^([a-zA-Z0-9]+)/$ index.php?nav=$1
+RewriteEngine On
+RewriteBase /
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.+)$ index.php [QSA,L]
