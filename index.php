@@ -1,5 +1,4 @@
 <?php
-$PageTitle="TGHome";
 include_once('SRC/base/header.php');
 function customPageHeader(){?>
     <!--custom hlavička-->
@@ -20,10 +19,10 @@ $request = $_SERVER['REQUEST_URI'];
 //var_dump($request);die();
 switch ($request) {
     case '/' :
-        echo "lomitko";
+        include_once('SRC/templates/home.php');
         break;
     case '' :
-        echo "bez lomitka";
+        include_once('SRC/templates/home.php');
         break;
     case '/cards' :
         include_once('SRC/templates/cards.php');
