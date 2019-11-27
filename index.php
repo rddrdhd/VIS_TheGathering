@@ -1,66 +1,57 @@
 <?php
 $PageTitle="TGHome";
-include_once('header.php');
+include_once('SRC/base/header.php');
 function customPageHeader(){?>
     <!--custom hlavička-->
 <?php }
-if(isset($_GET['nav'])):
-    $navitem = strtolower($_GET['nav']);
 
-    //individual stuff
-    include_once('SRC/templates/'.$navitem.'.php');
-    ?> 
- 
-    <?php
-    
-switch ($_GET['nav']):
-    case "posts":
-        $items = PostDAO::getAllType(1);
-        //include_once('SRC/templates/posts.php');
+
+
+
+echo "<pre>";
+var_dump($_SERVER['REQUEST_URI']);
+echo "</pre>";
+
+echo "<pre>";
+var_dump(__DIR__);
+echo "</pre>";
+
+$request = $_SERVER['REQUEST_URI'];
+//var_dump($request);die();
+switch ($request) {
+    case '/' :
+        echo "lomitko";
         break;
-    case "cards":
-    //$items = CardDAO::getByID(386616);
-    $items = CardDAO::getByID(386616);
-        //include_once('SRC/templates/cards.php');
+    case '' :
+        echo "bez lomitka";
         break;
-    case "decks":
-    $items = DeckDAO::getAll();
-        //include_once('SRC/templates/decks.php');
+    case '/cards' :
+        include_once('SRC/templates/cards.php');
         break;
-    case "ads":
-    $items = PostDAO::getAllType(3);
-        //include_once('SRC/templates/ads.php');
+    case '/posts' :
+        include_once('SRC/templates/posts.php');
         break;
-    case "tournaments":
-    $items = PostDAO::getAllType(4);
-        //include_once('SRC/templates/tournaments.php');
+    case '/decks' :
+        include_once('SRC/templates/decks.php');
         break;
-    case "users":
-    $items = UserDAO::getAll();
-        //include_once('SRC/templates/users.php');
+    case '/ads' :
+        include_once('SRC/templates/ads.php');
+        break;
+    case '/tournaments' :
+        include_once('SRC/templates/tournaments.php');
+        break;
+    case '/users' :
+        include_once('SRC/templates/users.php');
         break;
 
+        case '/API';
+            require __DIR__ . 'SRC/API/all-users.php';
+            break;
     default:
-        ?> <h1 style="text-align:center;padding:80px;">nope</h1> <?php
-        //include_once('SRC/templates/home.php');
+        http_response_code(404);
+        require __DIR__ . '/404.php';
+        break;
+}
 
-endswitch;
-echo "<pre>";
-var_dump($items);
-echo "</pre>";
-endif;
-/*
-echo "<pre>";
 
-$p = DeckDAO::getOneBy("idDeck", 1);
-var_dump($p);
-
-echo "</pre>";
-echo "<pre>";
-var_dump(new Card(386616));
-var_dump(DeckDAO::getOneBy("idDeck", 1));
-
-echo "</pre>";
-
-/
-include_once('footer.php');?>
+include_once('SRC/base/footer.php');?>
