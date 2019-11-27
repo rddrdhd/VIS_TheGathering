@@ -1,3 +1,2 @@
-users<?php
-$item = UserDAO::getAll();
-var_dump($item);
+<?php $PageTitle = "TG | Users";?>
+This is users.php
