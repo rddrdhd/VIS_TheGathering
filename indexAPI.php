@@ -1,11 +1,10 @@
 
 <?php
-echo "<pre>";
-var_dump($_SERVER['REQUEST_URI']);
-echo "</pre>";
+//echo "<pre>";
+//var_dump($_SERVER['REQUEST_URI']);
+//echo "</pre>";
 
 $request = $_SERVER['REQUEST_URI'];
-//var_dump($request);die();
 switch ($request) {
     case '/indexAPI.php/' :
         echo "lomitko";

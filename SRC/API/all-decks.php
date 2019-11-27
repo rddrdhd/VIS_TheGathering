@@ -1,4 +1,5 @@
 <?php include_once("thatssecret.php");
 
-$item = DeckDAO::getAll();
-var_dump($item);
+echo "<pre>";
+print_r(json_encode(DeckDAO::getAll(),true));
+echo "</pre>";

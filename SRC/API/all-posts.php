@@ -1,4 +1,5 @@
 <?php include_once("thatssecret.php");
 
-$item = PostDAO::getAll();
-var_dump($item);
+echo "<pre>";
+print_r(json_encode(PostDAO::getAll(),true));
+echo "</pre>";
