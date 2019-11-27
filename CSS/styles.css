@@ -2,7 +2,7 @@ html {
   color: white;
   backdrop-filter: hue-rotate(16deg);
   min-height: 1000px;
-  background-image: url("../../SRC/background.jpg");
+  background-image: url("../../Views/background.jpg");
   background-attachment: fixed;
   background-size: cover;
 }
@@ -32,6 +32,8 @@ body {
   font-weight: 100;
   margin-left: 42px;
   margin-top: 42px;
+  color: white;
+  text-decoration-color: white;
 }
 
 h1, h2, h3, h4, h5 {

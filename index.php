@@ -1,7 +1,8 @@
 <?php
-include_once('SRC/base/header.php');
+include_once('Views/base/header.php');
 function customPageHeader(){?>
     <!--custom hlavička-->
+
 <?php }
 
 
@@ -12,40 +13,43 @@ var_dump($_SERVER['REQUEST_URI']);
 echo "</pre>";
 
 echo "<pre>";
-var_dump(__DIR__);
+//var_dump(__DIR__);
 echo "</pre>";
 
 $request = $_SERVER['REQUEST_URI'];
 //var_dump($request);die();
 switch ($request) {
     case '/' :
-        include_once('SRC/templates/home.php');
+        include_once('Views/templates/home.php');
         break;
     case '' :
-        include_once('SRC/templates/home.php');
+        include_once('Views/templates/home.php');
         break;
     case '/cards' :
-        include_once('SRC/templates/cards.php');
+        include_once('Views/templates/cards.php');
         break;
     case '/posts' :
-        include_once('SRC/templates/posts.php');
+        include_once('Views/templates/posts.php');
         break;
     case '/decks' :
-        include_once('SRC/templates/decks.php');
+        include_once('Views/templates/decks.php');
+        break;
+    case '/decks/new' :
+        include_once('Views/templates/deck-new.php');
+        break;
+    case '/decks/add' :
+        include_once('Views/templates/deck-added.php');
         break;
     case '/ads' :
-        include_once('SRC/templates/ads.php');
+        include_once('Views/templates/ads.php');
         break;
     case '/tournaments' :
-        include_once('SRC/templates/tournaments.php');
+        include_once('Views/templates/tournaments.php');
         break;
     case '/users' :
-        include_once('SRC/templates/users.php');
+        include_once('Views/templates/users.php');
         break;
 
-        case '/API';
-            require __DIR__ . 'SRC/API/all-users.php';
-            break;
     default:
         http_response_code(404);
         require __DIR__ . '/404.php';
@@ -53,4 +57,4 @@ switch ($request) {
 }
 
 
-include_once('SRC/base/footer.php');?>
+include_once('Views/base/footer.php');?>
