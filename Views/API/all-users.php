@@ -1,4 +1,4 @@
-<?php include_once("thatssecret.php");
+<?php
 
 echo "<pre>";
 echo "hello?";

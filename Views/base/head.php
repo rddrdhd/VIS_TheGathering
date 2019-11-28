@@ -4,5 +4,11 @@
     <link href="../../JS/main.js">
     <?php include_once("thatssecret.php") ?>
     <link href="https://fonts.googleapis.com/css?family=Roboto|Raleway:100,300&display=swap" rel="stylesheet">
+    <script>
+        function addCard(){
+            let d = new Date();
+            alert("Today's date is " + d);
+        }
+    </script>
 
 </head><!-- /head -->

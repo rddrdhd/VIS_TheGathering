@@ -5,16 +5,16 @@ $multiverseIds = array();
 <form action="add" method="post">
     Deck title: <input type="text" name="deckTitle"><br>
     Cards: jednakarta, dvekarty, trikarty, ctyrikarty...<br>
-    <button>Add card</button><br><br>
 
-    <input type="submit">
+    <input type="submit" value="Add deck">
 </form>
-<form method="post">
-    multiverseID: <input type="number" name="multiverseID"><br>
-    <button>Add card to deck</button><br><br>
 
-    <button onclick="addCard()"></button>
+<form id="TG_form-popup" style="display:none;" method="post">
+    multiverseID: <input type="number" name="multiverseID">
+    <button onclick="addCard()">Add card to deck</button>
 </form>
+
+<button onclick="document.getElementById('TG_form-popup').style.display = 'block';">Add card</button><br><br>
 
 
 

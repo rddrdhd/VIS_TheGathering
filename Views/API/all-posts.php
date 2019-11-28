@@ -1,4 +1,4 @@
-<?php include_once("thatssecret.php");
+<?php
 
 echo "<pre>";
 print_r(json_encode(PostDAO::getAll(),true));
