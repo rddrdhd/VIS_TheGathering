@@ -68,7 +68,33 @@ a:hover {
 }
 .menu a.item:hover {
   text-decoration: underline;
+  text-decoration-color: #ffbb00;
   text-decoration-style: solid;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  text-decoration: none;
+  max-width: 150px;
+  position: absolute;
+  right: 20px;
+}
+.button-add {
+  background-color: #ffbb00;
+  color: black;
+}
+.button-add:hover {
+  background-color: #e2a400;
+}
+.button-add:before {
+  content: "+";
+  padding-right: 20px;
+}
+
+a.a_button {
+  text-decoration: none;
 }
 
 /*# sourceMappingURL=styles.css.map */

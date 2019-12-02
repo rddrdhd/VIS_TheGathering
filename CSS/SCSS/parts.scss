@@ -1,0 +1,25 @@
+.button {
+    display:flex;
+    justify-content: center;
+    padding: 20px;
+    text-decoration: none;
+    max-width: 150px;
+    position: absolute;
+    right: 20px;
+    &-add {
+        background-color: $yellow;
+        color: black;
+
+        &:hover {
+            background-color: #e2a400;
+        }
+
+        &:before {
+            content: "+";
+            padding-right: 20px;
+        }
+    }
+}
+a.a_button {
+    text-decoration: none;
+}
