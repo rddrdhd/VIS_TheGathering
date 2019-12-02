@@ -2,7 +2,7 @@
 $multiverseIds = array();
 ?>
 
-<form action="add" method="post">
+<form action="added" method="post">
     Deck title: <input type="text" name="deckTitle"><br>
     Cards: jednakarta, dvekarty, trikarty, ctyrikarty...<br>
 

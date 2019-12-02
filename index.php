@@ -7,15 +7,15 @@ function customPageHeader(){?>
 
 
 
-
+/*
 echo "<pre>";
-var_dump($_SERVER['REQUEST_URI']);
+//var_dump($_SERVER['REQUEST_URI']);
 echo "</pre>";
 
 echo "<pre>";
-//var_dump(__DIR__);
+var_dump(__DIR__);
 echo "</pre>";
-
+*/
 $request = $_SERVER['REQUEST_URI'];
 //var_dump($request);die();
 switch ($request) {
@@ -31,15 +31,17 @@ switch ($request) {
     case '/posts' :
         include_once('Views/templates/posts.php');
         break;
+
     case '/decks' :
         include_once('Views/templates/decks.php');
         break;
     case '/decks/new' :
-        include_once('Views/templates/deck-new.php');
+        include_once('Controllers/deck-new.php');
         break;
-    case '/decks/add' :
-        include_once('Views/templates/deck-added.php');
+    case '/decks/added' :
+        include_once('Controllers/deck-added.php');
         break;
+
     case '/ads' :
         include_once('Views/templates/ads.php');
         break;
@@ -52,7 +54,7 @@ switch ($request) {
 
     default:
         http_response_code(404);
-        require __DIR__ . '/404.php';
+        include_once('Views/404.php');
         break;
 }
 
