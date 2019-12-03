@@ -8,15 +8,14 @@ $multiverseIds = array();
     Cards: jednakarta, dvekarty, trikarty, ctyrikarty...<br>
 
     <input class="button button-add" type="submit" value="Add deck">
-</form>
+    multiverseID:
 
-<form id="TG_form-card"  method="post">
-    multiverseID:<div id="TG_form-add_card">
+    <div id="TG_form-add_card">
         <input id="multiverseID" type="number" name="multiverseID">
     </div>
     <a onclick="addCard()" class="button-add" >Add card to deck</a>
 
-
+<input id="hiddenCount" type="hidden" name="hiddenCount">
     <div id="TG_form-cards"></div>
 </form>
 

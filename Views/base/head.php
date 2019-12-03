@@ -11,15 +11,16 @@ var cardCount = 0;
         function addCard(){
             //console.log('yes');
             cardCount++;
+            var count = document.getElementById('hiddenCount');
             var div = document.getElementById('TG_form-cards');
             var cardID = document.getElementById('multiverseID').value;
             div.innerHTML +=
                 "card no. "+cardCount+" <br>" +
                 "<input type='number' " +
-                "name='card["+cardCount+"][name]' " +
+                "name='card"+cardCount+"' " +
                 "value='"+cardID+"' " +
                 "id='card"+cardCount+"'><hr>"
-
+            count.value = cardCount;
         }
 
     </script>
