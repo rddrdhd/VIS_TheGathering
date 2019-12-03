@@ -2,7 +2,7 @@ html {
   color: white;
   backdrop-filter: hue-rotate(16deg);
   min-height: 1000px;
-  background-image: url("../../SRC/background.jpg");
+  background-image: url("../../Views/background.jpg");
   background-attachment: fixed;
   background-size: cover;
 }
@@ -17,12 +17,13 @@ body {
 #body {
   min-height: 500px;
   background-color: rgba(0, 0, 0, 0.666);
+  padding: 20px;
 }
 
 #header {
   height: 80px;
   width: 100%;
-  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.666));
+  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.666));
   margin-top: 42px;
 }
 
@@ -32,10 +33,20 @@ body {
   font-weight: 100;
   margin-left: 42px;
   margin-top: 42px;
+  color: white;
+  text-decoration-color: white;
 }
 
 h1, h2, h3, h4, h5 {
   margin-top: 20px;
+}
+
+a {
+  color: #ffbb00;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
 }
 
 .menu {
@@ -45,22 +56,45 @@ h1, h2, h3, h4, h5 {
   justify-content: space-evenly;
   flex-wrap: wrap;
   background: rgba(0, 0, 0, 0.666);
-  border-bottom: 1px solid rgba(255, 187, 0, 0.507);
+  border-bottom: 1px solid #ffbb00;
 }
-.menu a {
+.menu a.item {
   color: white;
   text-decoration: none;
-}
-.menu a:hover {
-  text-decoration: underline;
-  text-decoration-style: 1px solid;
-}
-.menu a .item {
   letter-spacing: 4px;
   font-size: 20px;
-  width: 100%;
   text-align: center;
   padding: 10px;
+}
+.menu a.item:hover {
+  text-decoration: underline;
+  text-decoration-color: #ffbb00;
+  text-decoration-style: solid;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  text-decoration: none;
+  max-width: 150px;
+  position: absolute;
+  right: 20px;
+}
+.button-add {
+  background-color: #ffbb00;
+  color: black;
+}
+.button-add:hover {
+  background-color: #e2a400;
+}
+.button-add:before {
+  content: "+";
+  padding-right: 20px;
+}
+
+a.a_button {
+  text-decoration: none;
 }
 
 /*# sourceMappingURL=styles.css.map */
