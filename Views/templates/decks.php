@@ -9,7 +9,7 @@
             </div>
         </a>
 
-        <div class="TG_itemlist"  >
+        <div class="TG_itemlist">
             <?php foreach($allItems as $item):?>
                 <div class="TG_itemlist--item">
 

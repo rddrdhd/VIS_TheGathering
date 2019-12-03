@@ -59,13 +59,17 @@ class DeckDAO {
                     'idUserOwner' => 1
                 ];
             } catch (Exception $e) {
-                return $e;
+                echo $e;
             }
 
-            $id = $db->insert('deck', $data);
+            try {
+                $id = $db->insert('deck', $data);
+            } catch (Exception $e) {
+                echo $e;
+            }
 
         }
 
-        return $id;
+        echo $id;
     }
 }
