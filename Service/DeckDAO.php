@@ -59,11 +59,7 @@ class DeckDAO {
                     'rights' => 1,
                     'idUserOwner' => 1
                 ];
-            } catch (Exception $e) {
-                echo $e;
-            }
 
-            try {
                 $id = $db->insert('deck', $data);
             } catch (Exception $e) {
                 echo $e;
@@ -73,5 +69,6 @@ class DeckDAO {
 
         echo $id;
     }
+
 
 }

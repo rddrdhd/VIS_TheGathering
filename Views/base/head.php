@@ -7,10 +7,19 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto|Raleway:100,300&display=swap" rel="stylesheet">
 
     <script>
-
+var cardCount = 0;
         function addCard(){
-            let d = new Date();
-            alert("Today's date is " + d);
+            //console.log('yes');
+            cardCount++;
+            var div = document.getElementById('TG_form-cards');
+            var cardID = document.getElementById('multiverseID').value;
+            div.innerHTML +=
+                "card no. "+cardCount+" <br>" +
+                "<input type='number' " +
+                "name='card["+cardCount+"][name]' " +
+                "value='"+cardID+"' " +
+                "id='card"+cardCount+"'><hr>"
+
         }
 
     </script>
