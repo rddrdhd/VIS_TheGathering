@@ -1,6 +1,5 @@
 <?php
 
-
 class DeckDAO {
     public static function getAll(){
         $db = new MysqliDb (DB_HOST, DB_USERNAME, DB_PASSWORD, DB_DATABASE);
@@ -38,38 +37,13 @@ class DeckDAO {
         return $d;
     }
 
+
     public static function getCards($idDeck){
-        $db = new MysqliDb(DB_HOST, DB_USERNAME, DB_PASSWORD, DB_DATABASE);
+        $db = new MysqliDb (DB_HOST, DB_USERNAME, DB_PASSWORD, DB_DATABASE);
 
         $db->where("idDeck", $idDeck);
         $cards = $db->get("carddeck", null, ["idCard", "count"]);
         return $cards;
     }
 
-    public static function addDeck($deckName, $cardIDs){
-        $id = 0;
-        if($cardIDs == null){
-            $db = new MysqliDb(DB_HOST, DB_USERNAME, DB_PASSWORD, DB_DATABASE);
-
-            try {
-                $data = [
-                    'name' => $deckName,
-                    'createdAt' => $db->now(),
-                    'rights' => 1,
-                    'idUserOwner' => 1
-                ];
-            } catch (Exception $e) {
-                echo $e;
-            }
-
-            try {
-                $id = $db->insert('deck', $data);
-            } catch (Exception $e) {
-                echo $e;
-            }
-
-        }
-
-        echo $id;
-    }
 }
