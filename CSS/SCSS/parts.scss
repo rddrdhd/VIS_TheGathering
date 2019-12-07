@@ -4,12 +4,16 @@
     padding: 20px;
     text-decoration: none;
     max-width: 150px;
-    position: absolute;
-    right: 20px;
+    position: fixed;
+    left: 70%; // tmp - >1000px
+    top: 50px;
+
     &-add {
         background-color: $yellow;
         color: black;
 
+        left: 70%; // tmp - >1000px
+        top: 50px;
         &:hover {
             background-color: #e2a400;
         }

@@ -4,7 +4,6 @@ html {
   min-height: 1000px;
   background-image: url("../../Views/background.jpg");
   background-attachment: fixed;
-  background-size: cover;
 }
 
 body {
@@ -12,6 +11,7 @@ body {
   margin: auto;
   font-family: "Monserrat", sans-serif;
   font-weight: 100;
+  color: white;
 }
 
 #body {
@@ -78,8 +78,8 @@ a:hover {
   padding: 20px;
   text-decoration: none;
   max-width: 150px;
-  position: absolute;
-  right: 20px;
+  position: relative;
+  left: 80%;
 }
 .button-add {
   background-color: #ffbb00;
@@ -95,6 +95,47 @@ a:hover {
 
 a.a_button {
   text-decoration: none;
+}
+
+.new_deck {
+  display: flex;
+}
+
+#TG_form {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+#TG_form > div {
+  width: 33%;
+}
+#TG_form .first {
+  border-right: #ffbb00 1px solid;
+}
+#TG_form .first > div {
+  padding-top: 50px;
+}
+#TG_form .first a {
+  padding: 10px;
+  display: block;
+}
+#TG_form .second {
+  border-right: #ffbb00 1px solid;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#TG_form .second input {
+  width: 100%;
+  margin-bottom: 30px;
+}
+#TG_form .third {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+#TG_form .third .button {
+  position: sticky;
 }
 
 /*# sourceMappingURL=styles.css.map */

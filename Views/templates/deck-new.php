@@ -1,21 +1,25 @@
 <?php
 $multiverseIds = array();
 ?>
+<div class="new_deck">
+    <form action="/decks/added" method="post" id="TG_form">
+        <div class="first">
+            Deck title:
+            <input type="text" name="deckTitle"><br>
 
-    <form action="/decks/added" method="post">
-    Deck title:
-    <input type="text" name="deckTitle"><br>
-    Cards: jednakarta, dvekarty, trikarty, ctyrikarty...<br>
+            <div id="TG_form--add_card">
+                multiverseID:<input id="multiverseID" type="number" name="multiverseID">
+            </div>
 
-    <input class="button button-add" type="submit" value="Add deck">
-    multiverseID:
+            <a onclick="addCardField()" class="button-add" >Add card to deck</a>
+            <input id="hiddenCount" type="hidden" name="hiddenCount">
+        </div>
 
-    <div id="TG_form-add_card">
-        <input id="multiverseID" type="number" name="multiverseID">
-    </div>
-    <a onclick="addCardField()" class="button-add" >Add card to deck</a>
+        <div class="second"id="TG_form--cards">
+        </div>
+        <div class="third">
 
-<input id="hiddenCount" type="hidden" name="hiddenCount">
-    <div id="TG_form-cards"></div>
-</form>
-
+            <input class="button button-add" type="submit" value="Add deck">
+        </div>
+    </form>
+</div>

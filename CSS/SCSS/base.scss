@@ -6,13 +6,14 @@ html {
     min-height: 1000px;
     background-image:  url('../../Views/background.jpg');
     background-attachment: fixed;
-    background-size: cover;
+    //background-size: cover;//
 }
 body {
     max-width: 1000px;
     margin: auto;
     font-family: 'Monserrat', sans-serif;
     font-weight: 100;
+    color: white;
 }
 #body {
     min-height: 500px;
