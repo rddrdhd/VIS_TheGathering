@@ -72,7 +72,7 @@ class DeckDAO {
 
     public static function addCards($cardsArray, $deckID) {
         $db = new MysqliDb(DB_HOST, DB_USERNAME, DB_PASSWORD, DB_DATABASE);
-        $count = 0;
+        $rows = 0;
 
         foreach($cardsArray as $id) {
             try {
@@ -82,15 +82,14 @@ class DeckDAO {
                     'count' => 1
                 ];
 
-                $rows = $db->insert('carddeck', $data);
+                $rows = $db->insert('carddeck', $data); //TMP - insertMulti
 
-                echo "<pre>Rows: ".$rows."</pre>";
             } catch (Exception $e) {
                 echo $e;
             }
         }
-
-        return $count;
+        echo "<br>OK";
+        return $rows;
     }
 
 

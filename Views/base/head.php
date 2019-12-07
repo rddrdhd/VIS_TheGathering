@@ -7,9 +7,8 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto|Raleway:100,300&display=swap" rel="stylesheet">
 
     <script>
-var cardCount = 0;
-        function addCard(){
-            //console.log('yes');
+        var cardCount = 0;
+        function addCardField(){ //Garfield
             cardCount++;
             var count = document.getElementById('hiddenCount');
             var div = document.getElementById('TG_form-cards');
@@ -19,7 +18,7 @@ var cardCount = 0;
                 "<input type='number' " +
                 "name='card"+cardCount+"' " +
                 "value='"+cardID+"' " +
-                "id='card"+cardCount+"'><hr>"
+                "id='card"+cardCount+"' ><hr>";
             count.value = cardCount;
         }
 
