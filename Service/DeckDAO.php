@@ -67,25 +67,30 @@ class DeckDAO {
 
         }
 
-        echo $id;
+        return $id;
     }
 
     public static function addCards($cardsArray, $deckID) {
         $db = new MysqliDb(DB_HOST, DB_USERNAME, DB_PASSWORD, DB_DATABASE);
+        $count = 0;
 
         foreach($cardsArray as $id) {
             try {
                 $data = [
                     'idDeck' => $deckID,
-                    'idCard' => $id["idCard"],
-                    'count' =>  $id["count"]
+                    'idCard' => $id,
+                    'count' => 1
                 ];
 
-                $id = $db->insert('deck', $data);
+                $rows = $db->insert('carddeck', $data);
+
+                echo "<pre>Rows: ".$rows."</pre>";
             } catch (Exception $e) {
                 echo $e;
             }
         }
+
+        return $count;
     }
 
 

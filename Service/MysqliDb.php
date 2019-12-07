@@ -1585,7 +1585,12 @@ class MysqliDb
 
         // Bind parameters to statement if any
         if (count($this->_bindParams) > 1) {
-            call_user_func_array(array($stmt, 'bind_param'), $this->refValues($this->_bindParams));
+/*            echo "<pre>";
+            var_dump($stmt);
+            var_dump($this);
+            echo "</pre>";
+            die();
+*/            call_user_func_array(array($stmt, 'bind_param'), $this->refValues($this->_bindParams));
         }
 
         return $stmt;
