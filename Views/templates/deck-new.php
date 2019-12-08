@@ -15,7 +15,7 @@ $multiverseIds = array();
             <input id="hiddenCount" type="hidden" name="hiddenCount">
         </div>
 
-        <div class="second"id="TG_form--cards">
+        <div class="second" id="TG_form--cards">
         </div>
         <div class="third">
 

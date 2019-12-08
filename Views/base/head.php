@@ -15,11 +15,11 @@
             var div = document.getElementById('TG_form--cards');
             var cardID = document.getElementById('multiverseID').value;
             div.innerHTML +=
-                "card no. "+cardCount+" <br>" +
-                "<input type='number' " +
+                "card no. "+cardCount +": "+ cardID+" <br>" +
+                "<input type='hidden' " +
                 "name='card"+cardCount+"' " +
                 "value='"+cardID+"' " +
-                "id='card"+cardCount+"' >";
+                "id='card"+cardCount+"'> ";
             count.value = cardCount;
         }
 
