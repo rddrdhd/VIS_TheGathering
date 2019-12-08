@@ -2,12 +2,7 @@
     $PageTitle = "TG | Decks";
     $allItems = DeckDAO::getAll();
     ?>
-    <div class="row">
-        <a href="decks/new" class="a_button">
-            <div class="button button-add">
-                Add new deck
-            </div>
-        </a>
+    <div class="TG_list" id="deck-items">
 
         <div class="TG_itemlist">
             <?php foreach($allItems as $item):?>
@@ -25,5 +20,14 @@
                 </div>
                 <hr style="margin: 20px 0;">
             <?php endforeach;?>
+        </div>
+        <div class="TG_list_button">
+            <div class="button_sticky">
+                <a href="decks/new">
+                    <div class="button button-add">
+                        Add new deck
+                    </div>
+                </a>
+            </div>
         </div>
     </div>

@@ -20,3 +20,20 @@ body {
     background-color: $half-black;
     padding: 20px;
 }
+#footer {
+color: gray;
+    background-color: $half-black;
+    padding: 20px;
+}
+
+.button_sticky {
+    position: sticky;
+    top: 20px;
+}
+input[type="submit"] {
+    border-width: 0;
+    font-size:14px;
+    &:hover {
+        cursor:pointer;
+    }
+}
