@@ -1,0 +1,48 @@
+.new_deck {
+    display:flex;
+}
+
+#TG_form{
+    display:flex;
+    flex-direction: row;
+    width:100%;
+
+    &>div {
+        width: 33%;
+    }
+
+    .first {
+        border-right: $yellow 1px solid;
+
+        &>div {
+            padding-top:50px;
+        }
+
+        a {
+            padding: 10px;
+            display: block;
+        }
+    }
+
+    .second {
+        border-right: $yellow 1px solid;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        input {
+            width: 100%;
+            margin-bottom: 30px;
+        }
+    }
+
+    .third {
+        display:flex;
+        flex-direction: row;
+        align-items: center;
+
+        .button {
+            position: sticky;
+        }
+    }
+}

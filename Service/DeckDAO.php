@@ -15,7 +15,7 @@ class DeckDAO {
         return $decksObjects;
     }
 
-    private static function fillDeck($deck) {
+    private static function fillDeck($deck) {//from array
         $d = new Deck();
         $d->idDeck = $deck["idDeck"];
         $d->name = $deck["name"];
@@ -59,11 +59,7 @@ class DeckDAO {
                     'rights' => 1,
                     'idUserOwner' => 1
                 ];
-            } catch (Exception $e) {
-                echo $e;
-            }
 
-            try {
                 $id = $db->insert('deck', $data);
             } catch (Exception $e) {
                 echo $e;
@@ -71,7 +67,30 @@ class DeckDAO {
 
         }
 
-        echo $id;
+        return $id;
     }
+
+    public static function addCards($cardsArray, $deckID) {
+        $db = new MysqliDb(DB_HOST, DB_USERNAME, DB_PASSWORD, DB_DATABASE);
+        $rows = 0;
+
+        foreach($cardsArray as $id) {
+            try {
+                $data = [
+                    'idDeck' => $deckID,
+                    'idCard' => $id,
+                    'count' => 1
+                ];
+
+                $rows = $db->insert('carddeck', $data); //TMP - insertMulti
+
+            } catch (Exception $e) {
+                echo $e;
+            }
+        }
+        echo "<br>OK";
+        return $rows;
+    }
+
 
 }

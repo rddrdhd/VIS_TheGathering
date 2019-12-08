@@ -36,10 +36,10 @@ switch ($request) {
         include_once('Views/templates/decks.php');
         break;
     case '/decks/new' :
-        include_once('Controllers/deck-new.php');
+        include_once('Views/templates/deck-new.php');
         break;
     case '/decks/added' :
-        include_once('Controllers/deck-added.php');
+        include_once('Views/templates/deck-added.php');
         break;
 
     case '/ads' :
