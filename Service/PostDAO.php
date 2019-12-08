@@ -40,8 +40,9 @@ class PostDAO {
 
         //v//ar_dump($post);
         }
-
-        var_dump($array);
+        //echo "<pre>";
+        //var_dump($array);
+        //echo "</pre>";
         return $array;
     }
 
@@ -68,5 +69,32 @@ class PostDAO {
         $db = new MysqliDb (DB_HOST, DB_USERNAME, DB_PASSWORD, DB_DATABASE);
         $posts = $db->get('post');
         return $posts;
+    }
+
+    public static function addTournament($content){
+        $id = 0;
+        if($content==null){
+            return $id;
+        }
+        else {
+            $db = new MysqliDb(DB_HOST, DB_USERNAME, DB_PASSWORD, DB_DATABASE);
+
+            try {
+                $data = [
+                    'content' => $content,
+                    'createdAt' => $db->now(),
+                    'rights' => 1,
+                    'type' => 4,
+                    'idUserAuthor' => 1
+                ];
+
+                $id = $db->insert('post', $data);
+
+            } catch (Exception $e) {
+                echo $e;
+            }
+
+            return $id;
+        }
     }
 }
