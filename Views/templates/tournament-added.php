@@ -1,10 +1,21 @@
-"Added"<?php
-//tournaments/added?
-    //tTitle=
-        //&tDate=2020-01-29T23%3A23
-        //&tLocation=
-        //&tPrice=
-        //&tType=restricted
+<?php
 
-$type = $_GET['tType'];
-echo $type;
+$title = $_POST['tTitle'];
+$date = $_POST['tDate'];
+$location = $_POST['tLocation'];
+$price = $_POST['tPrice'];
+$prize = $_POST['tPrize'];
+$type = $_POST['tType'];
+$note = $_POST['tNote'];
+
+$content =
+    "title,".$title.";".
+    "date,".$date.";".
+    "location,".$location.";".
+    "price,".$price.";".
+    "prize,".$prize.";".
+    "type,".$type.";".
+    "note,".$note.";";
+
+PostDAO::addTournament($content);
+echo "OK: ".$content;
