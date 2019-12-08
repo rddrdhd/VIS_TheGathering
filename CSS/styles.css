@@ -78,12 +78,15 @@ a:hover {
   padding: 20px;
   text-decoration: none;
   max-width: 150px;
-  position: relative;
-  left: 80%;
+  position: fixed;
+  left: 70%;
+  top: 50px;
 }
 .button-add {
   background-color: #ffbb00;
   color: black;
+  left: 70%;
+  top: 50px;
 }
 .button-add:hover {
   background-color: #e2a400;

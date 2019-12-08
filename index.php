@@ -16,8 +16,8 @@ echo "<pre>";
 var_dump(__DIR__);
 echo "</pre>";
 */
-$request = $_SERVER['REQUEST_URI'];
-//var_dump($request);die();
+$request = explode('?', $_SERVER['REQUEST_URI'], 2)[0];
+var_dump($request);
 switch ($request) {
     case '/' :
         include_once('Views/templates/home.php');
@@ -45,9 +45,24 @@ switch ($request) {
     case '/ads' :
         include_once('Views/templates/ads.php');
         break;
+
+    case '/ads/new' :
+        include_once('Views/templates/ad-new.php');
+        break;
+    case '/ads/added' :
+        include_once('Views/templates/ad-added.php');
+        break;
+
     case '/tournaments' :
         include_once('Views/templates/tournaments.php');
         break;
+    case '/tournaments/new' :
+        include_once('Views/templates/tournament-new.php');
+        break;
+    case '/tournaments/added' :
+        include_once('Views/templates/tournament-added.php');
+        break;
+
     case '/users' :
         include_once('Views/templates/users.php');
         break;
