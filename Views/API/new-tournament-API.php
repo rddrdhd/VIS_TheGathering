@@ -17,5 +17,5 @@ $content =
     "type,".$type.";".
     "note,".$note.";";
 
-PostDAO::addTournament($content);
-echo "OK:<br>".$content;
+//PostDAO::addTournament($content);
+echo $content;

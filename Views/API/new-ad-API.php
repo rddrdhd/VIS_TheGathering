@@ -17,7 +17,7 @@ $content =
     "price,".$price.";".
     "note,".$note.";";
 
-PostDAO::addAd($content);
+//PostDAO::addAd($content);
 $cardImgUrl = CardDAO::getImageUrlByID($cardId);
 ?>
-<?php echo $cardImgUrl ?>
+<?php echo $content."cardImgUrl,".$cardImgUrl.";" ?>

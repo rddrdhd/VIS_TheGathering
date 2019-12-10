@@ -3,14 +3,15 @@
 $deckTitle = $_GET['deckTitle'];
 $count = $_GET['count'];
 if($count){
-    $deckID = DeckDAO::addDeck($deckTitle, null);
+    //$deckID = DeckDAO::addDeck($deckTitle, null);
     $cards = Array();
+    echo"cards";
     for($i = 1; $i<=$count; $i++){
         $cardID = $_GET['card'.$i];
-        echo $i!=1?", ":"";
+        echo ",";
         echo $cardID;
         array_push($cards, $cardID);
     }
-    echo "<br>celkem ".$count." karet v decku ".$deckTitle;
-    DeckDAO::addCards($cards, $deckID);
+    echo ";count,".$count.";deckTitle,".$deckTitle.";";
+    //DeckDAO::addCards($cards, $deckID);
 }
