@@ -19,7 +19,6 @@ class Post {
         $th->rights = "1";
         $th->type = "post";
         $th->author = UserDAO::getOneBy("login","root");
-        $th->target = UserDAO::getByLogin("pepik");
         return $th;
     }
 

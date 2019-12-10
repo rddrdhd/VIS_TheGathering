@@ -17,7 +17,7 @@ var_dump(__DIR__);
 echo "</pre>";
 */
 $request = explode('?', $_SERVER['REQUEST_URI'], 2)[0];
-var_dump($request);
+
 switch ($request) {
     case '/' :
         include_once('Views/templates/home.php');

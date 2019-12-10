@@ -3,7 +3,6 @@
 
 class PostDAO {
 
-
     public static function getAll() {
         $postsArrays = PostDAO::loadAllArray();
         $postsObjects = array();
@@ -12,7 +11,6 @@ class PostDAO {
             $p = self::fillPost($post);
             array_push($postsObjects, $p);
         }
-
         return $postsObjects;
     }
 
@@ -26,23 +24,13 @@ class PostDAO {
 
     public static function getAllType($type) {
         $array = array();
-
         $db = new MysqliDb (DB_HOST, DB_USERNAME, DB_PASSWORD, DB_DATABASE);
         $db->where('type',$type);
         $items = $db->get('post');
-        //var_dump($items);
-   // $items = $db->rawQuery('SELECT * FROM post WHERE type = {$type}');//$db->get('post');
         foreach($items as $item){
-
-          $post =  self::fillPost($item);
-//TODO: musím to spravit!
+            $post =  self::fillPost($item);
             array_push($array, $post);
-
-        //v//ar_dump($post);
         }
-        //echo "<pre>";
-        //var_dump($array);
-        //echo "</pre>";
         return $array;
     }
 
@@ -55,6 +43,7 @@ class PostDAO {
         $p->rights = $post["rights"];
         $p->type = $post["type"];
         $p->author = UserDAO::getOneBy("idUser",$post["idUserAuthor"]);
+
         if ($post["idUserTarget"]){
             $p->target = UserDAO::getOneBy("idUser",$post["idUserTarget"]);
         } else if ($post["idPostTarget"]) {
@@ -94,6 +83,27 @@ class PostDAO {
                 echo $e;
             }
 
+            return $id;
+        }
+    }
+
+    public static function addAd($content){
+        $id = 0;
+        if($content==null){
+            return $id;
+        } else {
+            $db = new MysqliDb(DB_HOST, DB_USERNAME, DB_PASSWORD, DB_DATABASE);
+            try {
+                $data = [
+                    'content' => $content,
+                    'createdAt' => $db->now(),
+                    'rights' => 1,
+                    'type' => 3,
+                    'idUserAuthor' => 1 ];
+                $id = $db->insert('post', $data);
+            } catch (Exception $e) {
+                echo $e;
+            }
             return $id;
         }
     }

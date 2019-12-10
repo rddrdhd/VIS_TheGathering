@@ -1,9 +1,10 @@
-<?php 
+<?php
 class Card {
     var $multiverseID;
     var $name;
     var $cmc;
     var $colors;
+    var $imageUrl;
 
     public static function defaultCard(){
         $th = new self(386616);

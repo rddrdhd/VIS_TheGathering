@@ -1,11 +1,24 @@
-
 <?php
 include_once("Service/thatssecret.php");
-//echo "<pre>";
-//var_dump($_SERVER['REQUEST_URI']);
-//echo "</pre>";
+
+require_once('Service/MysqliDb.php');
+require_once('Service/UserDAO.php');
+require_once('Models/User.php');
+require_once('Service/PostDAO.php');
+require_once('Models/Post.php');
+require_once('Service/DeckDAO.php');
+require_once('Models/Deck.php');
+
+require_once('Adapter/Card.php');
+require_once('Adapter/CardDAO.php');
+
+ini_set('allow_url_fopen', 1);
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
 $request = $_SERVER['REQUEST_URI'];
+var_dump($request);
 switch ($request) {
     case '/indexAPI.php/' :
         echo "lomitko";
@@ -13,22 +26,33 @@ switch ($request) {
     case '/indexAPI.php' :
         echo "bez lomitka";
         break;
-    case '/indexAPI.php/all-posts' :
-        //include_once('Views/Adapter/all-posts.php');
+
+    case '/indexAPI.php/posts' :
         print_r(json_encode(PostDAO::getAllType(1),true));
         break;
-    case '/indexAPI.php/all-ads' :
+
+    case '/indexAPI.php/ads' :
         print_r(json_encode(PostDAO::getAllType(3),true));
         break;
-    case '/indexAPI.php/all-tournaments' :
+    case '/indexAPI.php/ads/new' ://USE CASE
+        include_once('Views/API/new-ad-API.php');
+        break;
+
+    case '/indexAPI.php/tournaments' :
         print_r(json_encode(PostDAO::getAllType(4),true));
         break;
-    case '/indexAPI.php/all-decks' :
-        //include_once('Views/Adapter/all-decks.php');
+    case '/indexAPI.php/tournaments/new' ://USE CASE
+        include_once('Views/API/new-tournament-API.php');
+        break;
+
+    case '/indexAPI.php/decks' :
         print_r(json_encode(DeckDAO::getAll(),true));
         break;
-    case '/indexAPI.php/all-users' :
-        //include_once('Views/Adapter/all-users.php');
+    case '/indexAPI.php/decks/new' : //USE CASE
+        include_once('Views/API/new-deck-API.php');
+        break;
+
+    case '/indexAPI.php/users' :
         print_r(json_encode(UserDAO::getAll(),true));
         break;
     default:
@@ -36,3 +60,4 @@ switch ($request) {
         require __DIR__ . '/404.php';
         break;
 }
+
