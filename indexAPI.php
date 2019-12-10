@@ -1,5 +1,5 @@
 <?php
-include_once("Service/thatssecret.php");
+require_once('Service/thatssecret.php');
 
 require_once('Service/MysqliDb.php');
 require_once('Service/UserDAO.php');
@@ -17,8 +17,9 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-$request = $_SERVER['REQUEST_URI'];
-var_dump($request);
+$request = explode('?', $_SERVER['REQUEST_URI'], 2)[0];
+
+
 switch ($request) {
     case '/indexAPI.php/' :
         echo "lomitko";
