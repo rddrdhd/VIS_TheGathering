@@ -7,14 +7,6 @@ $note = $_POST['aNote'];
 $quantity = $_POST['aQuantity'];
 $price = $_POST['aPrice'];
 
-echo "<br>".$title;
-echo "<br>".$type;
-echo "<br>".$cardId;
-echo "<br>".$note;
-echo "<br>".$quantity;
-echo "<br>".$price;
-
-
 $content =
     "title,".$title.";".
     "type,".$type.";".
@@ -23,7 +15,7 @@ $content =
     "price,".$price.";".
     "note,".$note.";";
 
-//PostDAO::addAd($content);
+PostDAO::addAd($content);
 echo "OK: ".$content."<br>";
 $cardImgUrl = CardDAO::getImageUrlByID($cardId);
 ?>
