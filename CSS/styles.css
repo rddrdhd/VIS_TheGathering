@@ -20,6 +20,25 @@ body {
   padding: 20px;
 }
 
+#footer {
+  color: gray;
+  background-color: rgba(0, 0, 0, 0.666);
+  padding: 20px;
+}
+
+.button_sticky {
+  position: sticky;
+  top: 20px;
+}
+
+input[type=submit] {
+  border-width: 0;
+  font-size: 14px;
+}
+input[type=submit]:hover {
+  cursor: pointer;
+}
+
 #header {
   height: 80px;
   width: 100%;
@@ -77,16 +96,16 @@ a:hover {
   justify-content: center;
   padding: 20px;
   text-decoration: none;
-  max-width: 250px;
-  position: fixed;
-  left: 70%;
-  top: 50px;
+  max-width: 150px;
+  width: auto;
+  border-radius: 10px;
+}
+.button:hover {
+  cursor: pointer;
 }
 .button-add {
   background-color: #ffbb00;
   color: black;
-  left: 70%;
-  top: 50px;
 }
 .button-add:hover {
   background-color: #e2a400;
@@ -96,12 +115,10 @@ a:hover {
   padding-right: 20px;
 }
 
-a.a_button {
-  text-decoration: none;
-}
-
-.new_deck {
-  display: flex;
+input, textarea {
+  border-radius: 10px;
+  margin: 20px;
+  padding: 10px;
 }
 
 #TG_form {
@@ -109,10 +126,8 @@ a.a_button {
   flex-direction: row;
   width: 100%;
 }
-#TG_form > div {
-  width: 33%;
-}
 #TG_form .first {
+  width: 40%;
   border-right: #ffbb00 1px solid;
 }
 #TG_form .first > div {
@@ -123,6 +138,7 @@ a.a_button {
   display: block;
 }
 #TG_form .second {
+  width: 40%;
   border-right: #ffbb00 1px solid;
   display: flex;
   flex-direction: column;
@@ -133,12 +149,11 @@ a.a_button {
   margin-bottom: 30px;
 }
 #TG_form .third {
+  width: 20%;
   display: flex;
   flex-direction: row;
-  align-items: center;
-}
-#TG_form .third .button {
-  position: sticky;
+  align-items: flex-start;
+  justify-content: flex-end;
 }
 
 .new_tournament {
@@ -146,6 +161,20 @@ a.a_button {
   flex-direction: column;
   width: 50%;
   margin: auto;
+}
+
+.new_deck {
+  display: flex;
+}
+
+.TG_list {
+  display: flex;
+}
+.TG_itemlist {
+  width: 80%;
+}
+.TG_list_button {
+  width: 20%;
 }
 
 /*# sourceMappingURL=styles.css.map */
