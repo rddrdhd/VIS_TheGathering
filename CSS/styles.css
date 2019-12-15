@@ -180,5 +180,8 @@ input, textarea {
 .TG_list_button {
   width: 20%;
 }
+.TG_list_button > div {
+  margin-bottom: 20px;
+}
 
 /*# sourceMappingURL=styles.css.map */

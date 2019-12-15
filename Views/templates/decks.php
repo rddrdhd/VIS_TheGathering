@@ -29,5 +29,32 @@
                     </div>
                 </a>
             </div>
+            <div class="button_sticky button_sticky_second">
+                <a >
+                    <div onclick="importDeck()" class="button button-add">
+                        Import new deck
+                    </div>
+                </a>
+            </div>
+            <div id="import-deck">
+
+            </div>
         </div>
     </div>
+
+<script>
+function importDeck() {
+    var txt;
+    var importString = prompt("insert the string", "deckTitle=ahoj&count=2&card1=123&card2=234");
+    if (importString == null || importString === "") {
+        txt = "You did not insert anything!.";
+    } else {
+        //alert(importString);
+        debugger;
+        txt = "by clicking <a href='http://www.vis-zur0037.php5.cz/indexAPI.php/decks/new?".concat(
+            importString,
+            "'>here</a> your deck will be imported");
+    }
+    document.getElementById("import-deck").innerHTML += txt;
+}
+</script>

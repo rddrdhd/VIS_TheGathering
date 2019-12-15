@@ -10,5 +10,8 @@
 
     &_list_button {
         width: 20%;
+        & > div{
+            margin-bottom: 20px;
+        }
     }
 }
