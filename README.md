@@ -1,9 +1,16 @@
 # VIS_TheGathering
 
-This is project for school course VIS (2019) 
+This is project for school course VIS (2019)  
+
 It uses external [API](https://docs.magicthegathering.io/) for cards details, and the system itself is something like social network around the MTG cards.  
 This repository contains IS, web app & API.  
 API is needed for [android client](https://github.com/rddrdhd/VIS_TheGathering_android).  
+
+
+API endpoints:  
+`example.loc/indexAPI.php/items` and `example.loc/indexAPI.php/items/new` where 'items' are  `decks` or `tournaments` or `ads`.
+
+
 
 You need to make file `thisissecret.php` in `Service` directory with your database informations:
 
@@ -15,6 +22,8 @@ You need to make file `thisissecret.php` in `Service` directory with your databa
         DEFINE('DB_DATABASE', 'vis_db');
 ?>
 ```
+
+
 
 <details>
   <summary>Database structure script</summary>
