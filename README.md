@@ -1,6 +1,7 @@
 # VIS_TheGathering
 
-This is project for school course VIS (2019)   
+This is project for school course VIS (2019) 
+It uses external [API](https://docs.magicthegathering.io/) for cards details, and the system itself is something like social network around the MTG cards.  
 This repository contains IS, web app & API.  
 API is needed for [android client](https://github.com/rddrdhd/VIS_TheGathering_android).  
 
