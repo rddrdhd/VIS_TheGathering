@@ -1,5 +1,5 @@
 <?php
-
+// PATTERN DTO - všechny modely
 
 class Deck {
     var $idDeck;

@@ -15,7 +15,7 @@ class DeckDAO {
         return $decksObjects;
     }
 
-    private static function fillDeck($deck) {//from array
+    private static function fillDeck($deck) {
         $d = new Deck();
         $d->idDeck = $deck["idDeck"];
         $d->name = $deck["name"];
@@ -38,7 +38,7 @@ class DeckDAO {
     }
 
 
-    public static function getCards($idDeck){
+    public static function getCards($idDeck){  // PATTERN LAZY LOAD - volám jen když je to nutné
         $db = new MysqliDb (DB_HOST, DB_USERNAME, DB_PASSWORD, DB_DATABASE);
 
         $db->where("idDeck", $idDeck);

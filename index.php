@@ -5,7 +5,7 @@ function customPageHeader(){?>
 
 <?php }
 
-
+// MODIFIED PATTERN MVC - V+C in one, but different tags
 
 /*
 echo "<pre>";

@@ -263,6 +263,7 @@ class MysqliDb
      */
     public function __construct($host = null, $username = null, $password = null, $db = null, $port = null, $charset = 'utf8', $socket = null)
     {
+
         $isSubQuery = false;
 
         // if params were passed as array
@@ -426,7 +427,7 @@ class MysqliDb
      *
      * @return MysqliDb Returns the current instance.
      */
-    public static function getInstance()
+    public static function getInstance() // PATTERN SINGLETON
     {
         return self::$_instance;
     }

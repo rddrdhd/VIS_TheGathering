@@ -1,5 +1,5 @@
 <?php
-class CardDAO {
+class CardDAO {  // PATTERN ADAPTER - aby to z externího API bylo jak z vlastní DB
 
     public static function getByID($multiverseID) {
 
